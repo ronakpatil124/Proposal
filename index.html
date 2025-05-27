@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOW: E-commerce Platform for Anime & Car Posters</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            table {
+                page-break-inside: avoid;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+            line-height: 1.4;
+        }
+
+        .document-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 297mm;
+        }
+
+        .document-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2c5282;
+            padding-bottom: 20px;
+        }
+
+        .document-header h1 {
+            color: #2c5282;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .document-header h2 {
+            color: #4a5568;
+            font-size: 18px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .project-info {
+            background: #edf2f7;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #2c5282;
+        }
+
+        .project-info p {
+            margin: 5px 0;
+            font-size: 12px;
+            color: #2d3748;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 11px;
+            background: white;
+        }
+
+        .main-table {
+            border: 2px solid #2c5282;
+        }
+
+        .table-header {
+            background: #2c5282;
+            color: white;
+        }
+
+        .table-header th {
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid #1a365d;
+        }
+
+        .section-header {
+            background: #3182ce;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            padding: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subsection-header {
+            background: #63b3ed;
+            color: #1a365d;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        .req-id {
+            background: #f7fafc;
+            font-weight: bold;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            width: 80px;
+            color: #2d3748;
+        }
+
+        .req-title {
+            background: #ebf8ff;
+            font-weight: bold;
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            width: 200px;
+            color: #2b6cb0;
+        }
+
+        .req-description {
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        .req-description ul {
+            margin: 8px 0;
+            padding-left: 16px;
+        }
+
+        .req-description li {
+            margin: 4px 0;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: bold;
+            margin: 2px 0;
+        }
+
+        .ecommerce-tag {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .video-tag {
+            background: #fbb6ce;
+            color: #702459;
+        }
+
+        .poster-tag {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .performance-tag {
+            background: #fefcbf;
+            color: #744210;
+        }
+
+        .tech-tag {
+            background: #e6fffa;
+            color: #234e52;
+        }
+
+        .timeline-table {
+            margin: 20px 0;
+        }
+
+        .timeline-table th {
+            background: #4a5568;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .timeline-table td {
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+            text-align: center;
+        }
+
+        .phase-1 {
+            background: #fed7d7;
+        }
+
+        .phase-2 {
+            background: #fefcbf;
+        }
+
+        .phase-3 {
+            background: #c6f6d5;
+        }
+
+        .phase-4 {
+            background: #bee3f8;
+        }
+
+        .phase-5 {
+            background: #e9d8fd;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            color: #718096;
+            font-size: 10px;
+        }
+
+        .copy-instructions {
+            background: #48bb78;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .legend {
+            background: #f7fafc;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #2d3748;
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin: 5px 10px 5px 0;
+            font-size: 11px;
+        }
+
+        @page {
+            margin: 1in;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="document-container">
+        <!-- Document Header -->
+        <div class="document-header">
+            <h1>Statement of Work (SOW)</h1>
+            <h2>E-commerce Platform for Anime Posters, Bookmarks & Car Posters</h2>
+        </div>
+
+        <!-- Project Information -->
+        <div class="project-info">
+            <p><strong>Project Scope:</strong> Complete E-commerce Platform Development</p>
+            <p><strong>Estimated Timeline:</strong> 16-23 weeks</p>
+            <p><strong>Key Innovation:</strong> 🎥 Emotional Video Integration for Enhanced Customer Engagement</p>
+            <p><strong>Document Version:</strong> 1.0 | <strong>Date:</strong> May 27, 2025</p>
+        </div>
+
+        <!-- Copy Instructions -->
+        <div class="copy-instructions no-print">
+            <p>📋 <strong>TO COPY TO WORD:</strong> Select tables below → Copy → Paste into Word → Format as needed</p>
+            <p>💾 <strong>TO SAVE AS PDF:</strong> Press Ctrl+P → Select "Save as PDF"</p>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <h4>🏷️ Feature Legend</h4>
+            <span class="legend-item"><span class="feature-tag ecommerce-tag">🛒 E-COMMERCE</span> = E-commerce
+                Functionality</span>
+            <span class="legend-item"><span class="feature-tag video-tag">🎥 VIDEO</span> = Video Integration
+                Features</span>
+            <span class="legend-item"><span class="feature-tag poster-tag">🎯 SPECIALIZED</span> = Poster/Bookmark
+                Specific</span>
+            <span class="legend-item"><span class="feature-tag performance-tag">⚡ PERFORMANCE</span> = Performance
+                Critical</span>
+            <span class="legend-item"><span class="feature-tag tech-tag">⚙️ TECHNICAL</span> = Technical
+                Infrastructure</span>
+        </div>
+
+        <!-- Main Requirements Table -->
+        <table class="main-table">
+            <thead class="table-header">
+                <tr>
+                    <th style="width: 80px;">Req ID</th>
+                    <th style="width: 200px;">Requirement Title</th>
+                    <th>Business Requirement Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- SECTION A: ROLES & ACCESS MANAGEMENT -->
+                <tr>
+                    <td colspan="3" class="section-header">SECTION A: ROLES & ACCESS MANAGEMENT</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="subsection-header">a. User Roles</td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR1.1</td>
+                    <td class="req-title">User Role Definition</td>
+                    <td class="req-description">
+                        <span class="feature-tag ecommerce-tag">🛒 E-COMMERCE ROLES</span><br>
+                        <strong>Role Structure:</strong>
+                        <ul>
+                            <li><strong>Super Admin</strong> - Complete system control and e-commerce configuration</li>
+                            <li><strong>Store Manager</strong> - Product management, inventory control, order processing
+                            </li>
+                            <li><strong>Customer</strong> - Shopping, account management, order tracking</li>
+                            <li><strong>Guest User</strong> - Browse products and make purchases without registration
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR1.2</td>
+                    <td class="req-title">Admin Registration</td>
+                    <td class="req-description">
+                        IT Team can create login credentials for Super Admin and Store Manager roles with appropriate
+                        e-commerce permissions
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="subsection-header">b. Password Management</td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR1.3</td>
+                    <td class="req-title">Password Reset Authority</td>
+                    <td class="req-description">
+                        Super Admin can reset passwords for all users including customers, store managers, and staff
+                        members
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="subsection-header">c. Permissions & Control</td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR1.4</td>
+                    <td class="req-title">Role Permissions</td>
+                    <td class="req-description">
+                        Super Admin can manage permissions for Store Managers and configure customer access levels for
+                        e-commerce features
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR1.5</td>
+                    <td class="req-title">Access Control</td>
+                    <td class="req-description">
+                        <ul>
+                            <li><strong>Super Admin:</strong> Full system access and complete e-commerce configuration
+                            </li>
+                            <li><strong>Store Manager:</strong> Product management, order processing, customer service
+                            </li>
+                            <li><strong>Customer:</strong> Account management, order history, wishlist, reviews</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <!-- SECTION B: ADMIN DASHBOARD & E-COMMERCE MANAGEMENT -->
+                <tr>
+                    <td colspan="3" class="section-header">SECTION B: ADMIN DASHBOARD & E-COMMERCE MANAGEMENT</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="subsection-header">a. Authentication & Login</td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.1</td>
+                    <td class="req-title">Admin Login System</td>
+                    <td class="req-description">
+                        <strong>Multi-option secure login system:</strong>
+                        <ul>
+                            <li>Email and Password</li>
+                            <li>Phone Number and OTP</li>
+                            <li>Two-factor authentication for enhanced security</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="subsection-header">b. Profile & Store Management</td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.2</td>
+                    <td class="req-title">Profile Management</td>
+                    <td class="req-description">
+                        Update admin profiles, store information, and business contact details
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.3</td>
+                    <td class="req-title">Store Configuration</td>
+                    <td class="req-description">
+                        <span class="feature-tag ecommerce-tag">🛒 E-COMMERCE FEATURES</span><br>
+                        <ul>
+                            <li>Brand logo, tagline, and store identity management</li>
+                            <li>Store policies (shipping, returns, privacy policy)</li>
+                            <li>Payment gateway configuration (PayPal, Stripe, Razorpay)</li>
+                            <li>Tax settings and shipping zones management</li>
+                            <li>Currency and international shipping settings</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.4</td>
+                    <td class="req-title">Customer Management</td>
+                    <td class="req-description">
+                        <span class="feature-tag ecommerce-tag">🛒 E-COMMERCE FEATURES</span><br>
+                        <ul>
+                            <li>View customer accounts and complete order history</li>
+                            <li>Reset customer passwords and manage accounts</li>
+                            <li>Customer service inquiry management system</li>
+                            <li>Customer segmentation for targeted marketing campaigns</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="subsection-header">c. Product & Inventory Management</td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.5</td>
+                    <td class="req-title">Homepage Control</td>
+                    <td class="req-description">
+                        <span class="feature-tag poster-tag">🎯 SPECIALIZED FOR POSTERS</span><br>
+                        <ul>
+                            <li>Banner management for anime and car poster promotions</li>
+                            <li>Featured product sections (trending anime, new car collections)</li>
+                            <li>Seasonal collection highlights (limited editions, artist collaborations)</li>
+                            <li>Call-to-action buttons for sales and special offers</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.6</td>
+                    <td class="req-title">Product Catalog Management</td>
+                    <td class="req-description">
+                        <span class="feature-tag poster-tag">🎯 SPECIALIZED CATEGORIES</span><br>
+                        <strong>Product Categories:</strong>
+                        <ul>
+                            <li><strong>Anime Posters:</strong> By series (Naruto, Dragon Ball, Attack on Titan),
+                                character, genre</li>
+                            <li><strong>Car Posters:</strong> By brand (Ferrari, BMW, Lamborghini), era (classic,
+                                modern), style</li>
+                            <li><strong>Bookmarks:</strong> Anime characters, motivational quotes, vintage designs,
+                                custom options</li>
+                        </ul>
+                        <span class="feature-tag ecommerce-tag">🛒 PRODUCT ATTRIBUTES</span><br>
+                        <ul>
+                            <li>High-resolution images with zoom functionality</li>
+                            <li>Multiple size options (A3, A4, custom sizes)</li>
+                            <li>Material specifications (paper type, finish, frame options)</li>
+                            <li>Pricing and discount management system</li>
+                            <li>Stock levels and automated inventory tracking</li>
+                            <li>SKU management and product variants</li>
+                            <li>Bulk operations via CSV upload</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.7</td>
+                    <td class="req-title">Content Management</td>
+                    <td class="req-description">
+                        <span class="feature-tag poster-tag">🎯 SPECIALIZED CONTENT</span><br>
+                        <ul>
+                            <li>Blog section for anime news and car culture articles</li>
+                            <li>Featured artist spotlights and collaborations</li>
+                            <li>Product care instructions for poster maintenance</li>
+                            <li>Behind-the-scenes content and design process</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.8</td>
+                    <td class="req-title">Store Information Pages</td>
+                    <td class="req-description">
+                        <ul>
+                            <li>About Us (company story, mission for poster enthusiasts)</li>
+                            <li>Artist collaboration information and partnerships</li>
+                            <li>Quality assurance details for printing and materials</li>
+                            <li>Customer testimonials and gallery showcase</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.9</td>
+                    <td class="req-title">Customer Communication</td>
+                    <td class="req-description">
+                        <span class="feature-tag ecommerce-tag">🛒 E-COMMERCE COMMUNICATION</span><br>
+                        <ul>
+                            <li>Contact form submissions with order inquiry tracking</li>
+                            <li>Customer service ticket management system</li>
+                            <li>Automated email notifications for orders and shipping</li>
+                            <li>Live chat integration for real-time customer support</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.10</td>
+                    <td class="req-title">Store Customization</td>
+                    <td class="req-description">
+                        <ul>
+                            <li>Logo, favicon, and brand color customization</li>
+                            <li>Footer content with social media integration</li>
+                            <li>Store location and contact information</li>
+                            <li>Legal pages (terms of service, privacy policy, shipping policy)</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.11</td>
+                    <td class="req-title">Media Management</td>
+                    <td class="req-description">
+                        <span class="feature-tag video-tag">🎥 EMOTIONAL VIDEO FEATURE</span><br>
+                        <ul>
+                            <li>High-resolution product image library with zoom capabilities</li>
+                            <li><strong>Silent promotional videos for each product (anime/car posters)</strong></li>
+                            <li><strong>Popup video player that triggers when product is clicked</strong></li>
+                            <li><strong>Emotional storytelling videos showcasing poster details and room setups</strong>
+                            </li>
+                            <li>Downloadable content (digital wallpapers, catalogs)</li>
+                            <li>Video optimization for web performance</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.12</td>
+                    <td class="req-title">User Management</td>
+                    <td class="req-description">
+                        <ul>
+                            <li>Staff account creation with role-based permissions</li>
+                            <li>Customer account oversight and management</li>
+                            <li>Access level configuration for different user types</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="req-id">FR2.13</td>
+                    <td class="req-title">E-commerce Integrations</td>
+                    <td class="req-description">
+                        <span class="feature-tag ecommerce-tag">🛒 ESSENTIAL E-COMMERCE TOOLS</span><br>
+                        <ul>
+                            <li><strong>Payment Gateways:</strong> PayPal, Stripe, Razorpay, Apple Pay, Google Pay</li>
+                            <li><strong>Shipping Providers:</strong> FedEx, UPS, DHL, local courier services</li>
+                            <li><strong>Analytics:</strong> Google Analytics, Facebook Pixel for conversion tracking
+                            </li>
+                            <li><strong>Marketing Tools:</strong> Mailchimp, social media integration, abandoned cart
+                                recovery</li>
+                            <li><strong>SEO Tools:</strong> Advanced meta tag management, rich snippets</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <!-- Continue with remaining sections... -->
+                <!-- Note: This is the first portion - would you like me to continue with the remaining sections? -->
+
+            </tbody>
+        </table>
+
+        <!-- Implementation Timeline Table -->
+        <h3 style="color: #2c5282; margin-top: 40px;">📅 Implementation Timeline</h3>
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Duration</th>
+                    <th>Key Deliverables</th>
+                    <th>Milestone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="phase-1">
+                    <td><strong>Phase 1: Foundation</strong></td>
+                    <td>4-6 weeks</td>
+                    <td>Platform setup, User roles, Payment integration</td>
+                    <td>Basic E-commerce Ready</td>
+                </tr>
+                <tr class="phase-2">
+                    <td><strong>Phase 2: Core Features</strong></td>
+                    <td>6-8 weeks</td>
+                    <td>Product catalog, Shopping cart, Customer accounts</td>
+                    <td>Full Shopping Experience</td>
+                </tr>
+                <tr class="phase-3">
+                    <td><strong>Phase 3: Advanced Features</strong></td>
+                    <td>4-6 weeks</td>
+                    <td><strong>🎥 Video integration</strong>, Search, Mobile optimization</td>
+                    <td>Enhanced User Experience</td>
+                </tr>
+                <tr class="phase-4">
+                    <td><strong>Phase 4: Testing & Launch</strong></td>
+                    <td>2-3 weeks</td>
+                    <td>Testing, Security, Staff training, Soft launch</td>
+                    <td>Live Website</td>
+                </tr>
+                <tr class="phase-5">
+                    <td><strong>Phase 5: Post-Launch</strong></td>
+                    <td>Ongoing</td>
+                    <td>Monitoring, Optimization, Marketing campaigns</td>
+                    <td>Continuous Improvement</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Total Estimated Timeline:</strong> 16-23 weeks | <strong>Key Innovation:</strong> 🎥 Emotional
+                Video Integration</p>
+            <p><strong>Document prepared for:</strong> E-commerce Platform Development | <strong>Version:</strong> 1.0
+            </p>
+            <p><strong>Contact:</strong> Project Manager | <strong>Date:</strong> May 27, 2025</p>
+        </div>
+    </div>
+</body>
+
+</html>
